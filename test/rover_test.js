@@ -60,13 +60,13 @@ describe('Rover', () => {
     });
 
     [
-        {sequence: 'RFFRB', facing: 'S', x:2, y:1},
-        {sequence: 'FLFFLB', facing: 'S', x:-2, y:2},
-        {sequence: 'BBLFFRRB', facing: 'E', x:-3, y:-2},
-        {sequence: 'FFFRBBB', facing: 'E', x:-3, y:3}
-    ].forEach(({sequence, facing, x, y}) => {
+        {sequence: 'RFFRB', end_facing: 'S', end_x:2, end_y:1},
+        {sequence: 'FLFFLB', end_facing: 'S', end_x:-2, end_y:2},
+        {sequence: 'BBLFFRRB', end_facing: 'E', end_x:-3, end_y:-2},
+        {sequence: 'FFFRBBB', end_facing: 'E', end_x:-3, end_y:3}
+    ].forEach(({sequence, end_facing, end_x, end_y}) => {
         it('executes sequence of instructions ' + sequence, () => {
-            assert.deepEqual(go(sequence, {facing: 'N', x:0, y:0}), {facing: facing, x:x, y:y})
+            assert.deepEqual(go(sequence, {facing: 'N', x:0, y:0}), {facing: end_facing, x:end_x, y:end_y})
         })
     });
 
